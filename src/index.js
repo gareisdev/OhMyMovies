@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, {Fragment} from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import List from "./containers/List";
+import Nav from "./components/Nav/Nav"
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import "bootswatch/dist/minty/bootstrap.min.css";
+
+const App = () => {
+    return (
+        <Fragment>
+            <Nav/>
+            <main>
+                <div className='container'>
+                    <List/>
+                </div>
+            </main>
+        </Fragment>
+        
+    )
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
